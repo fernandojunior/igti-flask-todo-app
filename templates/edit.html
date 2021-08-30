@@ -1,0 +1,13 @@
+<form action="/edit_todo/" method="POST">
+    <label for="id"> Id  </label>
+    <input type="text" name="id" id="id" value="{{ todo.id }}">
+
+    <label for="title"> Nova Atividade  </label>
+    <input type="text" name="title" id="title" value="{{ todo.title }}">
+
+    <label for="status"> Status  </label>
+    <input type="text" name="status" id="status"  value="{{ todo.status }}">
+ 
+    <input type="submit" value="Editar" />
+ </form>
+ 

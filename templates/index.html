@@ -1,0 +1,32 @@
+<img height="300px" src="https://clickup.com/blog/wp-content/uploads/2019/01/to-do-list-apps.png" />
+
+<h1>Formulário</h1>
+
+<form action="/" method="POST">
+   <label for="title"> Nova Atividade  </label>
+   <input type="text" name="title" id="title">
+
+   <input type="submit" value="Criar" />
+</form>
+
+<h1>Atividades</h1>
+
+<table style="border: 1px solid black">
+    <tr>
+        <th>Task Id</th>
+        <th>Atividades</th>
+        <th>Terminada?</th>
+        <th>Edicao</th>
+    </tr>
+    {% for todo in todos %}
+    <tr>
+        <td>{{ todo.id }}</td>
+        <td>{{ todo.title }}</td>
+        <td>{{ todo.status }}</td>
+        <td><a href={{ url_for('edit_todo', id=todo.id )}}>Editar Atividade</td>
+    </tr>
+    {% endfor %}
+ 
+</table>
+
+<a href="/clean_todos">Apagar atividades</a>
